@@ -5,6 +5,7 @@ using System.Net;
 
 namespace Mvc4Async
 {
+    using System.Threading;
 
     public class WebApiApplication : System.Web.HttpApplication
     {
@@ -43,6 +44,7 @@ namespace Mvc4Async
              * You won't need to set minFreeThreads or minLocalRequestFreeThreads if you're not using classic/ISAPI mode.
              * */
             System.Net.ServicePointManager.DefaultConnectionLimit = int.MaxValue;
+            ThreadPool.SetMaxThreads(5, 0);
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
