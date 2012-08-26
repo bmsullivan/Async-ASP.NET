@@ -44,7 +44,7 @@ namespace Mvc4Async
              * You won't need to set minFreeThreads or minLocalRequestFreeThreads if you're not using classic/ISAPI mode.
              * */
             System.Net.ServicePointManager.DefaultConnectionLimit = int.MaxValue;
-            ThreadPool.SetMaxThreads(5, 0);
+            ThreadPool.SetMaxThreads(4, 4);
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
